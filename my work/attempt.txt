@@ -1,0 +1,4 @@
+1) Handle Missing Values (Fill/Drop)
+2) Encoding of Categorical Data  ← MOVE THIS UP!
+3) Outlier Removal (Isolation Forest)
+4) Normalization (Yeo-Johnson)
