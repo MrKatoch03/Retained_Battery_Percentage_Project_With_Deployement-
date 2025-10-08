@@ -2,8 +2,11 @@ from setuptools import find_packages, setup
 #findpacakages - discover all the packages utilizied in our ML project 
 from typing import List
 
+## Used setup function to create package and a function to fetch data 
+## from requirements.txt
 
-## In real project we may use 100 packages
+
+
 HYPEN_E_DOT='-e .'
 def get_requirements(file_path:str)-> List[str]:
     """
