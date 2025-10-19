@@ -1,0 +1,28 @@
+================================================================================
+MODEL TRAINING REPORT
+================================================================================
+
+DETAILED RESULTS (sorted by Test R² - descending):
+--------------------------------------------------------------------------------
+            Model                                  Best_Params  Train_R2  Test_R2  Train_RMSE  Test_RMSE  Train_MAE  Test_MAE   Overfit
+         CatBoost    {'iterations': 100, 'learning_rate': 0.1}  0.586682 0.587627    3.731949   4.074318   2.043056  2.155192 -0.000945
+    Random Forest {'min_samples_leaf': 2, 'n_estimators': 200}  0.844986 0.558827    2.285490   4.214193   1.014350  2.313250  0.286159
+          XGBoost      {'n_estimators': 100, 'subsample': 1.0}  0.892575 0.531511    1.902592   4.342699   1.307356  2.440100  0.361065
+Linear Regression                      {'fit_intercept': True}  0.484427 0.508428    4.168103   4.448394   2.475544  2.599169 -0.024001
+    Decision Tree      {'max_depth': 5, 'min_samples_leaf': 4}  0.447636 0.467600    4.314257   4.629443   2.697510  2.818353 -0.019964
+      K-Neighbors                  {'n_neighbors': 11, 'p': 2}  0.504346 0.441520    4.086792   4.741476   2.539225  2.903246  0.062826
+         AdaBoost                      {'learning_rate': 0.01}  0.385496 0.417407    4.550462   4.842753   2.930603  3.080318 -0.031911
+
+================================================================================
+BEST MODEL SUMMARY
+================================================================================
+
+Best Model: CatBoost
+Test R² Score: 0.5876
+Test RMSE: 4.0743
+Test MAE: 2.1552
+Overfit Score: -0.0009
+
+Best Parameters:
+  - iterations: 100
+  - learning_rate: 0.1

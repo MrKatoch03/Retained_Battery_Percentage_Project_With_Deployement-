@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
+from src.components.model_trainer import ModelTrainer,ModelTrainerConfig
 # Only variable then dataclass else same
 
 @dataclass
@@ -65,6 +66,15 @@ if __name__ == "__main__":
         target_col=target_col,
         groupby_cols=groupby_cols
     )
+
+    model_trainer = ModelTrainer()
+        
+    r2_score = model_trainer.initiate_model_trainer(
+        train_array=train_arr,
+        test_array=test_arr
+    )
+
+
 
 
 
