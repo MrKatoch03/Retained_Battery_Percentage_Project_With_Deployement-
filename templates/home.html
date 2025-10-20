@@ -1,0 +1,90 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Battery Capacity Retention Predictor</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Battery Feature Input</legend>
+        </h1>
+
+        <div class="mb-3">
+            <label class="form-label">Manufacturer</label>
+            <select class="form-control" name="manufacturer" required>
+                <option selected disabled value="">Select Manufacturer</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Panasonic">Panasonic</option>
+                <option value="LG Chem">LG Chem</option>
+                <option value="CATL">CATL</option>
+                <option value="BYD">BYD</option>
+                <option value="Samsung SDI">Samsung SDI</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Chemistry</label>
+            <select class="form-control" name="chemistry" required>
+                <option selected disabled value="">Select Chemistry</option>
+                <option value="NMC">NMC</option>
+                <option value="LFP">LFP</option>
+                <option value="NCA">NCA</option>
+            </select>
+        </div>
+
+        <!-- Numeric Inputs -->
+        <div class="mb-3">
+            <label class="form-label">Capacity (kWh)</label>
+            <input class="form-control" type="number" name="capacity_kWh" min="40" max="120" step="0.1" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Charge Cycles</label>
+            <input class="form-control" type="number" name="charge_cycles" min="50" max="3000" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Average Temperature (°C)</label>
+            <input class="form-control" type="number" name="avg_temp_celsius" min="-10" max="50" step="0.1" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Discharge Rate (C)</label>
+            <input class="form-control" type="number" name="discharge_rate_c" min="0.5" max="5" step="0.1" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Charge Rate (C)</label>
+            <input class="form-control" type="number" name="charge_rate_c" min="0.5" max="3" step="0.1" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Average SOC (%)</label>
+            <input class="form-control" type="number" name="avg_soc_percent" min="10" max="90" step="0.1" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Storage Time (months)</label>
+            <input class="form-control" type="number" name="storage_time_months" min="0" max="24" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fast Charge Ratio</label>
+            <input class="form-control" type="number" name="fast_charge_ratio" min="0" max="1" step="0.01" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Calendar Age (years)</label>
+            <input class="form-control" type="number" name="calendar_age_years" min="0.1" max="12" step="0.1" required>
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Battery Capacity Retention" />
+        </div>
+       </form>
+
+       <h2>
+           Predicted Capacity Retained: {{ results }}
+       </h2>
+    </div>
+</body>
+</html>
