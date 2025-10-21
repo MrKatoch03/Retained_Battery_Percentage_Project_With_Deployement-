@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
+# Copy artifacts folder
+COPY artifacts/ /app/artifacts/
+
 # Copy the rest of your application code
 COPY . .
 
